@@ -8,7 +8,7 @@ import (
 )
 
 const (
-	fileName = "coffee-product.json"
+	fileName = "./coffee-product.ts"
 )
 
 func CreateFileBufio(data []byte) error {
