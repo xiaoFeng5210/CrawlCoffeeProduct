@@ -23,6 +23,7 @@ func main() {
 		defer close(httpCh)
 		defer wg.Done()
 		value := <-httpCh
+		fmt.Println("ts success")
 
 		tsContent := fmt.Sprintf("export const coffeeLocaleProductList = %s", string(value))
 		err := handler.CreateFileBufio([]byte(tsContent), "coffee-product.ts")
@@ -35,6 +36,7 @@ func main() {
 		defer close(httpCh2)
 		defer wg.Done()
 		value := <-httpCh2
+		fmt.Println("json success")
 		err := handler.CreateFileBufio(value, "coffee-product.json")
 		if err != nil {
 			panic(err)
