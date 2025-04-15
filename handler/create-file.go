@@ -7,11 +7,7 @@ import (
 	"os"
 )
 
-const (
-	fileName = "./coffee-product.ts"
-)
-
-func CreateFileBufio(data []byte) error {
+func CreateFileBufio(data []byte, fileName string) error {
 	file, err := os.Create(fileName)
 	if err != nil {
 		fmt.Println("create file failed, err:", err)
@@ -36,7 +32,7 @@ func CreateFileBufio(data []byte) error {
 	return nil
 }
 
-func CreateFileIo(data []byte) error {
+func CreateFileIo(data []byte, fileName string) error {
 	file, err := os.Create(fileName)
 	if err != nil {
 		fmt.Println("create file failed, err:", err)
