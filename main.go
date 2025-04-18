@@ -24,7 +24,6 @@ func main() {
 		defer wg.Done()
 		value := <-httpCh
 		fmt.Println("ts success")
-
 		tsContent := fmt.Sprintf("export const coffeeLocaleProductList = %s", string(value))
 		err := handler.CreateFileBufio([]byte(tsContent), "coffee-product.ts")
 		if err != nil {
